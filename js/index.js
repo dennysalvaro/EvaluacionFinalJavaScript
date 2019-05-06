@@ -153,9 +153,9 @@ var calculadora = {
 		this.actualizarPantalla();
 	},
 
-	mostrarResultado: function(){ // TECLA IGUAL
+	mostrarResultado: function(){ // Cuando presione la TECLA IGUAL
 
-		if(!this.ayudaTeclaIgual){ //Primer vez que presiono igual
+		if(!this.ayudaTeclaIgual){ // Cuando aprieta la primera vez que presiono igual
 			this.secondValue = parseFloat(this.valorPantalla);
 			this.lastValor = this.secondValue;
 
@@ -163,17 +163,17 @@ var calculadora = {
 			this.realizarOperacion(this.firstValue, this.secondValue, this.operacion);
 
 		} else { //Siguientes veces que presiono igualrealizarOperacion
-		//Calculo el resultado
+		//Para calcular el resultado
 		this.realizarOperacion(this.firstValue, this.lastValor, this.operacion);
 		}
 
-		//Almaceno el resultado como primer valor para poder seguir operando
+		//Se Almacena el resultado como primer valor para poder seguir operando
 		this.firstValue = this.resultado;
 
-		//Borro el visor y lo reemplazo por el resultado
+		//Para borrar la pantalla y lo reemplazo por el resultado
 		this.valorPantalla = "";
 
-		//verifico el largo del resultado para recortarlo si hace falta
+		//Para verificar si el largo del resultado para recortarlo si hace falta. Solo 8 caracteres
 
 		if (this.resultado.toString().length < 9){
 			this.valorPantalla = this.resultado.toString();
